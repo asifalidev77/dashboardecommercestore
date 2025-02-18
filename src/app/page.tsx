@@ -1,14 +1,21 @@
-import { Button, Typography } from "@mui/material";
-
-export default function Home() {
+"use client";
+import Sidebar from "@/components/Sidebar";
+import {Routes, Route, BrowserRouter} from "react-router-dom";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Settings from "./pages/Settings";
+export default function Main() {
   return (
-    <div style={{ textAlign: "center", marginTop: "50px" }}>
-      <Typography variant="h4" gutterBottom>
-        Welcome to My MUI + Next.js App
-      </Typography>
-      <Button variant="contained" color="primary">
-        Click Me
-      </Button>
-    </div>
+  <>
+  <BrowserRouter>
+  <Routes> 
+<Route path="/" element={<Home />}> </Route>
+<Route path="/about" element={<About/>}> </Route>
+<Route path="/settings" element={<Settings/>}> </Route>
+
+  </Routes>
+  </BrowserRouter>
+    <Sidebar />
+    </>
   );
 }
