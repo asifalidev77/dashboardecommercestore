@@ -32,6 +32,23 @@ import { List, Typography, ListItem, ListItemText} from "@mui/material";
         <Typography variant="subtitle2" gutterBottom>
             Totel
             </Typography>
+            <Typography variant="subtitle2" gutterBottom>
+           {totalPrice}
+            </Typography>
+            <List disablePadding>
+        {products.map((product) => (
+          <ListItem key={product.name} sx={{ py: 1, px: 0 }}>
+            <ListItemText
+              sx={{ mr: 2 }}
+              primary={product.name}
+              secondary={product.desc}
+            />
+            <Typography variant="body1" sx={{ fontWeight: 'medium' }}>
+              {product.price}
+            </Typography>
+          </ListItem>
+        ))}
+      </List>
         </>
     );
 }
